@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+env/
+
+# Dataset
+data/raw/*.csv
+data/raw/*.zip
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Model files
+*.pkl
+*.joblib
+
+# Streamlit
+.streamlit/

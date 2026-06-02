@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+jupyter
+notebook
+scikit-learn
+duckdb
+streamlit
+fastapi
+uvicorn
+kaggle

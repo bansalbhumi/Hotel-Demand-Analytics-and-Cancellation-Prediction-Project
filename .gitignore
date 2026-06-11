@@ -28,3 +28,6 @@ Thumbs.db
 
 # Streamlit
 .streamlit/
+
+# VS Code temporary files
+tempCodeRunnerFile.py

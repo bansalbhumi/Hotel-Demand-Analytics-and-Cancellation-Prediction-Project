@@ -54,7 +54,7 @@
 
 - [x] Repository Created
 - [x] Dataset Downloaded
-- [ ] Data Profiling
+- [x] Data Profiling
 
 ## Week 2-3
 

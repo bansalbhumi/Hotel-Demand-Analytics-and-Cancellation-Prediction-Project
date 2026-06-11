@@ -250,7 +250,7 @@ Next Milestone:
 ### Week 2-3
 
 * [x] Core Visuals
-* [ ] Interactive Dashboard
+* [x] Interactive Dashboard
 * [ ] Business Insights
 * [ ] Dashboard Presentation
 

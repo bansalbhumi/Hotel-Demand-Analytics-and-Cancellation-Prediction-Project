@@ -17,6 +17,14 @@ Dataset:
 - Cleaned Columns: 36
 - Target Variable: is_canceled
 
+Tools Used:
+- Python
+- Pandas
+- DuckDB
+- Jupyter Notebook
+- Git & GitHub
+- VS Code
+
 ---
 
 ## Slide 2: Dataset Structure and Setup
@@ -52,7 +60,8 @@ Actions taken:
 - company filled with 0
 
 Other issues:
-- 31,994 duplicate rows found
+- 31,994 duplicate rows identified and reviewed.
+- Duplicate records were retained because multiple hotel bookings can legitimately share identical booking attributes.
 - ADR contains possible outliers
 - Lead time has very high values up to 737 days
 
@@ -74,18 +83,27 @@ Key findings:
 
 ## Slide 5: Week 2 Plan
 
-Next work:
-- Design dashboard layout.
-- Create executive KPI cards.
-- Build cancellation dashboard page.
-- Build revenue/ADR dashboard page.
-- Add filters for hotel, month, market segment, customer type and country.
-- Convert charts into business recommendations.
+Next Work:
+
+- Design Streamlit dashboard
+- Create executive KPI cards
+- Build interactive filters
+- Create booking trend analysis
+- Create cancellation analysis
+- Create ADR and revenue analysis
+- Generate dashboard business insights
 
 Planned KPIs:
-- Total bookings
-- Cancellation rate
+
+- Total Bookings
+- Cancellation Rate
 - Average ADR
-- Average lead time
-- Total room nights
-- Segment share
+- Average Lead Time
+- Total Room Nights
+
+Expected Deliverables:
+
+- Interactive Dashboard
+- Dashboard Screenshots
+- Week 2 Insight Memo
+- Dashboard Presentation Materials

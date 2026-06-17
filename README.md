@@ -256,6 +256,7 @@ Next Milestone:
 
 ### Week 4-5
 
+* [x] Model Framing
 * [ ] Feature Engineering for ML
 * [ ] Model Training
 * [ ] Model Evaluation

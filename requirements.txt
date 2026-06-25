@@ -11,3 +11,16 @@ streamlit
 fastapi
 uvicorn
 kaggle
+langchain
+langchain-google-genai
+langchain-community
+google-generativeai
+python-dotenv
+shap
+pytest
+httpx
+xgboost
+optuna
+langgraph
+statsmodels
+joblib

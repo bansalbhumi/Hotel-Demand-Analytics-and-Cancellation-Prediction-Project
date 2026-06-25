@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-06-22T06:42:10.113712+00:00",
+  "total_predictions_logged": 200,
+  "samples_analysed": 200,
+  "feature_drift": {
+    "lead_time": {
+      "psi": 0.0237,
+      "status": "stable"
+    },
+    "total_of_special_requests": {
+      "psi": 0.0147,
+      "status": "stable"
+    },
+    "previous_cancellations": {
+      "psi": 0.0041,
+      "status": "stable"
+    },
+    "deposit_type": {
+      "psi": 0.0033,
+      "status": "stable"
+    },
+    "market_segment": {
+      "psi": 0.0194,
+      "status": "stable"
+    },
+    "customer_type": {
+      "psi": 0.0086,
+      "status": "stable"
+    }
+  },
+  "prediction_drift": {
+    "reference_cancellation_rate": 0.3708,
+    "live_cancellation_rate": 0.215,
+    "relative_change_pct": 42.01,
+    "avg_probability": 0.3897,
+    "risk_distribution": {
+      "Low": 0.43,
+      "Moderate": 0.42,
+      "High": 0.15
+    },
+    "status": "significant_drift"
+  },
+  "overall_status": "significant_drift"
+}

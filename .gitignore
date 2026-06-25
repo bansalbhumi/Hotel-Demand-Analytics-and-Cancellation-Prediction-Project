@@ -32,3 +32,26 @@ Thumbs.db
 # VS Code temporary files
 tempCodeRunnerFile.py
 
+# Model datasets
+data/processed/model_train_engineered.csv
+data/processed/model_test_engineered.csv
+
+# Raw datasets
+data/raw/*.csv
+data/raw/*.zip
+
+# Saved models
+*.pkl
+*.joblib
+
+# Datasets
+data/processed/model_train.csv
+data/processed/model_test.csv
+
+# Large processed datasets
+data/processed/*.csv
+data/processed/*.db
+data/processed/*.parquet
+
+# Environment files
+.env

@@ -49,35 +49,29 @@ def load_data():
 
 df = load_data()
 
-def render_exec_demand(df):
-    executive_overview.render(df)
-    st.markdown("<br><hr><br>", unsafe_allow_html=True)
-    demand_analysis.render(df)
-
-def render_rev_cancel(df):
-    pricing_insights.render(df)
-    st.markdown("<br><hr><br>", unsafe_allow_html=True)
-    cancellation_analytics.render(df)
-
-def render_cust_risk(df):
-    customer_intelligence.render(df)
-    st.markdown("<br><hr><br>", unsafe_allow_html=True)
+def render_ml(df):
     ml_risk_prediction.render()
+    
+def render_ai(df):
+    render_ai_analyst_page()
 
 st.sidebar.title('Navigation')
 
 PAGES = {
-    "1. Executive & Demand Overview": render_exec_demand,
-    "2. Revenue & Cancellations": render_rev_cancel,
-    "3. Customer & Risk Intelligence": render_cust_risk,
-    "4. AI Analyst": render_ai_analyst_page
+    "1. Executive Overview": executive_overview.render,
+    "2. Demand Analysis": demand_analysis.render,
+    "3. Cancellation Analytics": cancellation_analytics.render,
+    "4. Pricing & ADR Insights": pricing_insights.render,
+    "5. Customer Intelligence": customer_intelligence.render,
+    "6. ML Risk Prediction": render_ml,
+    "7. AI Analyst": render_ai
 }
 
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 
 # Global Filters (Only applied to analytic views)
-if selection != "4. AI Analyst":
+if selection not in ["6. ML Risk Prediction", "7. AI Analyst"]:
     st.sidebar.markdown("---")
     st.sidebar.header("Global Filters")
 
@@ -121,4 +115,4 @@ if selection != "4. AI Analyst":
     PAGES[selection](filtered_df)
 else:
     # Route to standalone pages (no global filters applied)
-    PAGES[selection]()
+    PAGES[selection](df)

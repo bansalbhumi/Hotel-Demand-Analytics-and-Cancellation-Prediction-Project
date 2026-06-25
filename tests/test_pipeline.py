@@ -19,7 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from src.data_cleaning import clean_data
-from src.feature_engineering import engineer_features
+from src.feature_engineering import BookingFeatureEngineer
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -85,7 +85,7 @@ def cleaned_df(raw_df):
 
 @pytest.fixture
 def engineered_df(cleaned_df):
-    return engineer_features(cleaned_df.copy())
+    return BookingFeatureEngineer().fit_transform(cleaned_df.copy())
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -174,7 +174,7 @@ class TestEngineerFeatures:
     def test_prior_cancel_flag_one_when_cancellations_exist(self):
         """prior_cancel_flag must be 1 when previous_cancellations > 0."""
         row = _minimal_raw_row(adults=2, previous_cancellations=2)
-        df = engineer_features(clean_data(pd.DataFrame([row])))
+        df = BookingFeatureEngineer().fit_transform(clean_data(pd.DataFrame([row])))
         assert df["prior_cancel_flag"].iloc[0] == 1
 
     # --- lead_time_bucket ---
@@ -193,7 +193,7 @@ class TestEngineerFeatures:
         """Lead-time bucketing should assign correct bucket at every boundary."""
         df = cleaned_df.copy()
         df["lead_time"] = lead_time
-        df = engineer_features(df)
+        df = BookingFeatureEngineer().fit_transform(df)
         assert str(df["lead_time_bucket"].iloc[0]) == expected_bucket
 
     # --- season ---
@@ -216,7 +216,7 @@ class TestEngineerFeatures:
         """Season should be correctly derived for every month of the year."""
         df = cleaned_df.copy()
         df["arrival_date_month"] = month
-        df = engineer_features(df)
+        df = BookingFeatureEngineer().fit_transform(df)
         assert df["season"].iloc[0] == expected_season
 
     def test_new_columns_added(self, engineered_df):

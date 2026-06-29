@@ -33,8 +33,18 @@ from agent_ui import render_ai_analyst_page
 @st.cache_data
 def load_data():
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(current_dir, "..", "..", "data", "raw", "hotel_bookings.csv")
-    df = pd.read_csv(data_path)
+    data_path = os.path.join(current_dir, "..", "..", "data", "processed", "hotel_bookings_cleaned.csv")
+    alt_data_path = os.path.join(current_dir, "..", "..", "data", "raw", "hotel_bookings.csv")
+    
+    # Prefer cleaned dataset (119,210 rows) to avoid duplicates and nulls
+    if os.path.exists(data_path):
+        df = pd.read_csv(data_path)
+    elif os.path.exists(alt_data_path):
+        df = pd.read_csv(alt_data_path)
+    else:
+        st.error("Dataset not found! Please ensure data exists in `data/processed/` or `data/raw/`.")
+        st.stop()
+
     
     df["total_nights"] = df["stays_in_weekend_nights"] + df["stays_in_week_nights"]
     df["country"] = df["country"].fillna("Unknown")
